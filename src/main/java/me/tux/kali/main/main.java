@@ -3,13 +3,10 @@ package me.tux.kali.main;
 import me.tux.kali.util.SizeUtils;
 import me.tux.kali.util.TerminalUtils;
 
-
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
-import java.util.Random;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -20,11 +17,11 @@ public class main {
     private static final Scanner sizex = new Scanner(System.in);
     private static final Scanner sizey = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
-            System.out.println(" _________\n" + "|  _____  |\\\n" + "| |\\ ___| | \\\n" + "| | |   | | |\n" + "| | |___| | |\n" + "\\ | |____\\| |\n" + " \\|_________| " + TerminalUtils.SKIP);
-            System.out.println("Image Resizer by tuxiscool");
+        System.out.println(" _________\n" + "|  _____  |\\\n" + "| |\\ ___| | \\\n" + "| | |   | | |\n" + "| | |___| | |\n" + "\\ | |____\\| |\n" + " \\|_________| " + TerminalUtils.SKIP);
+        System.out.println("Image Resizer by tuxiscool");
 
         System.out.print(TerminalUtils.SKIP + "Please enter image directory. ");
         String dirval = dir.nextLine();
@@ -47,11 +44,21 @@ public class main {
                 System.out.print(TerminalUtils.SKIP + "Please enter resized Width value. ");
                 int sizexval = Integer.parseInt(sizex.nextLine());
 
-
                 System.out.print(TerminalUtils.SKIP + "Please enter resized Height value. ");
                 int sizeyval = Integer.parseInt(sizey.nextLine());
 
-                String str = String.valueOf(findfile);
+                if (sizexval > 20000) {
+                    System.out.println("Width Value too big");
+                    return;
+                } else {
+
+                    if (sizeyval > 20000) {
+                        System.out.println("Height Value too big");
+                        return;
+                    }
+                }
+
+                    String str = String.valueOf(findfile);
                 if (!str.contains(".")) {
 
                 } else {
@@ -68,7 +75,7 @@ public class main {
                 SizeUtils.resizeFile(String.valueOf(findfile), str + "-modified." + extension, sizexval, sizeyval);
 
 
-                System.out.print(System.lineSeparator() + "Completed modifying images.");
+                System.out.print(System.lineSeparator() + "Completed modifying images." + TerminalUtils.SKIP);
             } else {
                 System.out.println("Filetype unsupported.");
 
