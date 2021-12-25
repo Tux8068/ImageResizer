@@ -67,8 +67,6 @@ public class main {
 
                 SizeUtils.resizeFile(String.valueOf(findfile), str + "-modified." + extension, sizexval, sizeyval);
 
-                //File file = new File(dirval + "screenshot_" + new Random().nextInt() + ".png");
-                //ImageIO.write(new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize())), "png", file);
 
                 System.out.print(System.lineSeparator() + "Completed modifying images.");
             } else {
