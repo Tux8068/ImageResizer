@@ -11,6 +11,7 @@ resolution for all sorts of needs
 1. Yes, there will be bugs in the code, I am not perfect & this isn't a finished project.
 2. Please post bugs in issues.
 3. if you need help, contact me on discord: Tuxiscool#6456
+4. Currently only works on .png, .jpg & .tiff 
 
 ```
 
